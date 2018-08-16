@@ -1,4 +1,4 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     module: {
@@ -17,7 +17,7 @@ module.exports = {
                 test: /\.html$/,
                 use: [
                     {
-                        loader: "html-loader"
+                        loader: 'html-loader'
                     }
                 ]
             },
@@ -25,13 +25,21 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: ['eslint-loader']
-            }
+            },
+            {
+                test: /\.(png|jpg)$/,
+                loader: 'url-loader?limit=8192'
+            },
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader'
+            },
         ]
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "./src/index.html",
-            filename: "./index.html"
+            template: './src/index.html',
+            filename: './index.html'
         })
     ]
 };
