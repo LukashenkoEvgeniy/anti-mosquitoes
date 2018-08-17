@@ -6,15 +6,12 @@ import {About} from '../components/About';
 
 export default function RightColumn() {
     return (
-        <Content>
+        <div>
             <Header/>
             <About/>
-        </Content>
+        </div>
     );
 }
 
-const Content = styled.div`
-    
-`;
 
 

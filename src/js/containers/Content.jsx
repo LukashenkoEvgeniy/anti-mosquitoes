@@ -20,4 +20,10 @@ export default class Content extends Component {
 const ContentWrapper = styled.div`
     margin: 20px 100px 20px 100px;
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `;
