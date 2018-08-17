@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import MainView from '../containers/MainView.jsx';
 
-export default function App() {
+export default function LeftColumn() {
     return (
         <MainView/>
     );
