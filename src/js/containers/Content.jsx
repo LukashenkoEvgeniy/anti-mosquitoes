@@ -1,29 +1,30 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styled from 'styled-components'
-import {Header} from '../components/Header';
-import RightColumn from './RightColumn.jsx';
-import LeftColumn from './LeftColumn.jsx';
 
-export default class Content extends Component {
-    render() {
-        return (
-            <ContentWrapper>
+import Advantages from './Advantages.jsx';
+import Presentation from './Presentation.jsx';
+import Instruction from './Instruction.jsx';
+import Calculator from './Calculator.jsx';
+import Description from './Description.jsx';
 
-                <RightColumn/>
-                <LeftColumn/>
 
-            </ContentWrapper>
-        );
-    }
+export default function Content() {
+    return (
+        <ContentWrapper>
+            <Presentation/>
+            <Advantages/>
+            <Description/>
+            <Instruction/>
+            <Calculator/>
+        </ContentWrapper>
+    );
 }
 
 const ContentWrapper = styled.div`
-    margin: 20px 100px 20px 100px;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    @media (max-width: 768px) {
-        flex-direction: column;
-    }
+    margin-right: auto;
+    margin-left: auto;
+        width: 100%;
+        box-sizing: border-box;
+            display: block;
+                font-family: 'Open Sans', serif;
 `;

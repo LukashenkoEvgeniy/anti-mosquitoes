@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components'
 
-export function Header() {
+import {H1} from '../common/Atom'
+
+export default function Header({children}) {
     return (
-        <H1>{'РАМОЧНАЯ МОСКИТНАЯ СЕТКА'}</H1>
+        <H1>{children}</H1>
     )
 }
-
-const H1 = styled.h1`
-    color: yellow;
-`;

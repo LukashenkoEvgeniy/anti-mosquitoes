@@ -1,22 +1,19 @@
 import React from 'react';
 import styled from 'styled-components'
 
-export function About() {
+import {H2} from '../../common/Atom';
+
+export default function PresentationText({}) {
     return (
-        <Content>
+        <TextWrapper>
             <H2>{'- внутреняя и наружная'}</H2>
             <H2>{'- надёжный профиль и крепления'}</H2>
             <H2>{'- несколько цветов'}</H2>
             <H2>{'- открывание на петлях'}</H2>
-        </Content>
+        </TextWrapper>
     )
 }
 
-const Content = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
-
-const H2 = styled.h2`
-    color: yellow;
+const TextWrapper = styled.div`
+    
 `;

@@ -1,6 +1,8 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin  = require('copy-webpack-plugin');
 
 module.exports = {
+    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -40,6 +42,10 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: './src/index.html',
             filename: './index.html'
-        })
+        }),
+        new CopyWebpackPlugin([
+            // relative path is from src
+            {from: './src/static/img/favicon.ico'}, // <- your path to favicon
+        ])
     ]
 };

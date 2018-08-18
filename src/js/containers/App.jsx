@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components'
 
-import MainView from '../containers/MainView.jsx';
+import Content from "./Content.jsx";
 
 export default function App() {
     return (
-        <MainView/>
+        <Content/>
     );
 }
 
