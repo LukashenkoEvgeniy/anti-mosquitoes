@@ -20,7 +20,8 @@ export const H1 = styled.h1`
 `;
 
 export const H2 = styled.h2`
-       color: ${props => props.color ? props.color : defaultTextColor};
+    text-align: center;
+    color: ${props => props.color ? props.color : defaultTextColor};
 `;
 
 export const Block = styled.section`
