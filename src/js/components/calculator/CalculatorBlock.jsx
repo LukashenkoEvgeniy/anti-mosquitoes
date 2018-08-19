@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components'
+import { inject } from 'mobx-react';
 
 import {H2} from '../../common/Atom';
 import {calc, validator} from '../../utils/PriceCalculator';
 import ResultBlock from './ResultBlock.jsx';
 
+@inject('basketStore')
 export default class CalculatorBlock extends React.Component {
 
     constructor(props) {
@@ -15,6 +17,10 @@ export default class CalculatorBlock extends React.Component {
             height: 1000,
             width: 700
         };
+    }
+
+    onAddToBasket(){
+        this.props.basketStore.add(this.state)
     }
 
     calcPrice() {
@@ -99,9 +105,8 @@ export default class CalculatorBlock extends React.Component {
                 }
                 {
                     !this.state.error && this.state.price &&
-                    <button>{'Добавить в корзину'}</button>
+                    <button onClick={()=>this.onAddToBasket()}>{'Добавить в корзину'}</button>
                 }
-
             </InputsWrapper>
         )
     }
