@@ -11,7 +11,7 @@ import PresentationImage from '../components/presentation/PresentationImage';
 
 export default function Presentation() {
     return (
-        <Block>
+        <Block id={'mesh'}>
             <Header>{'РАМОЧНАЯ МОСКИТНАЯ СЕТКА'}</Header>
             <Body>
                 <PresentationText/>

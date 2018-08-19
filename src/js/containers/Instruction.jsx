@@ -8,7 +8,7 @@ import {instructions} from "../data/Instructions";
 
 export default function Instruction() {
     return (
-        <Block>
+        <Block id={'instruction'}>
             <Header>{'ИНСТРУКЦИЯ ПО ЗАМЕРАМ'}</Header>
             {instructions.map((item, index) =>
                 <Block key={index}>

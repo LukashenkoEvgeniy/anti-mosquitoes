@@ -10,7 +10,7 @@ import Body from '../components/Body';
 
 export default function Calculator() {
     return (
-        <Block>
+        <Block id={'price'}>
             <Header>{'РАСЧЕТ СТОИМОСТИ'}</Header>
             <Body>
                 <CalculatorImage/>

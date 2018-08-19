@@ -11,7 +11,7 @@ import DescriptionImage from "../components/description/DescriptionImage";
 
 export default function Description() {
     return (
-        <Block>
+        <Block id={'components'}>
             <Header>{'ВНУТРЕННЯЯ МОСКИТНАЯ СЕТКА'}</Header>
 
             <Body>

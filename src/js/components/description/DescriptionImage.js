@@ -5,10 +5,13 @@ import imgUrl from '../../../static/img/description.png';
 
 export default function DescriptionImage({}) {
     return (
-        <ImgWrapper src={imgUrl}/>
+        <ImageWrapper src={imgUrl}/>
     )
 }
 
-const ImgWrapper = styled.img`
-    height: 100%;
-`;
+const ImageWrapper = styled.img`
+    width: 70%;
+    @media (max-width: 768px) {
+        width: 100%;
+  }
+ `;

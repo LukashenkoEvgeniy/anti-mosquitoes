@@ -37,6 +37,7 @@ export const InlineBlock = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     flex-grow:1;
     border: 1px solid #1477da;
     padding: 3rem;

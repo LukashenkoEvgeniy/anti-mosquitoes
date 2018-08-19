@@ -5,23 +5,12 @@ import {Block} from '../common/Atom';
 import Header from '../components/Header';
 import AdvantageCard from '../components/advantages/AdvantageCard';
 import {advantages} from '../data/Advantages'
+import PopupContent from '../components/order/PopupContent.jsx';
 
 
-export default function Advantages() {
-
-
+export default function OrderPopup() {
     return (
-        <Block id={'advantages'}>
-            <Header>{'ПРЕИМУЩЕСТВА РАМОЧНОЙ СЕТКИ'}</Header>
-
-            <AdvantageCards>
-                {advantages.map((item, index) => <AdvantageCard
-                    image={item.image}
-                    key={index}
-                    title={item.title}
-                />)}
-            </AdvantageCards>
-        </Block>
+        <PopupContent/>
     );
 }
 

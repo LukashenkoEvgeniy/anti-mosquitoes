@@ -3,14 +3,18 @@ import {Provider} from 'mobx-react';
 import { hot } from 'react-hot-loader'
 
 import Content from './Content.jsx';
+import Navigation from './Navigation.jsx';
 import BasketStore from '../stores/BasketStore';
+import UIStore from '../stores/UIStore';
 
 function App() {
-
-    const basketStore = new BasketStore();
+    const stores = {
+        basketStore : new BasketStore(),
+        uiStore: new UIStore()
+    };
 
     return (
-        <Provider basketStore={basketStore}>
+        <Provider {...stores}>
             <Content/>
         </Provider>
     );
