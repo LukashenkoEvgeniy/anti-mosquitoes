@@ -5,6 +5,7 @@ import { inject } from 'mobx-react';
 import {H2} from '../../common/Atom';
 import {calc, validator} from '../../utils/PriceCalculator';
 import ResultBlock from './ResultBlock.jsx';
+import {Button, FormControl} from 'react-bootstrap';
 
 @inject('basketStore')
 export default class CalculatorBlock extends React.Component {
@@ -105,7 +106,7 @@ export default class CalculatorBlock extends React.Component {
                 }
                 {
                     !this.state.error && this.state.price &&
-                    <button onClick={()=>this.onAddToBasket()}>{'Добавить в корзину'}</button>
+                    <Button bsStyle="success" onClick={()=>this.onAddToBasket()}>{'Добавить в корзину'}</Button>
                 }
             </InputsWrapper>
         )
@@ -123,11 +124,13 @@ const InputWithLabel = styled.div`
     justify-content: space-between;
 `;
 
-const Input = styled.input`
+const Input = styled(FormControl)`
     width: 171px;
     type: 'text'
 `;
 
-const Select = styled.select`
+const Select = styled(FormControl).attrs({
+    componentClass: 'select'
+})` 
     width: 175px;
 `;

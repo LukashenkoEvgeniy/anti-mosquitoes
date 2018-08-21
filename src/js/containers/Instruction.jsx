@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import {Block, InlineBlock} from '../common/Atom';
 import Header from "../components/Header";
 import {instructions} from "../data/Instructions";
+import {Image, Panel} from "react-bootstrap";
 
 
 export default function Instruction() {
@@ -11,27 +12,25 @@ export default function Instruction() {
         <Block id={'instruction'}>
             <Header>{'ИНСТРУКЦИЯ ПО ЗАМЕРАМ'}</Header>
             {instructions.map((item, index) =>
-                <Block key={index}>
-                    <InlineBlock>
-                        <TextWrapper>{item.title}</TextWrapper>
-                        {item.image && <ImageWrapper src={item.image}/>}
-                    </InlineBlock>
-                </Block>
+                <PanelWrapper key={index} id="collapsible-panel-example-2" defaultExpanded>
+                    <Panel.Heading>
+                        <Panel.Title toggle>
+                            {item.title}
+                        </Panel.Title>
+                    </Panel.Heading>
+                    <Panel.Collapse>
+                        <Panel.Body>
+                            {item.text}
+                            <Image src={item.image} responsive />
+                        </Panel.Body>
+                    </Panel.Collapse>
+                </PanelWrapper>
             )}
         </Block>
     );
 }
 
-const TextWrapper = styled.p`
-    width: 50%;
-    @media (max-width: 768px) {
-        width: 100%;
-  }
+const PanelWrapper = styled(Panel)`
+    width: 100%;
 `;
 
-const ImageWrapper = styled.img`
-    width: 50%;
-    @media (max-width: 768px) {
-        width: 100%;
-  }
-`;

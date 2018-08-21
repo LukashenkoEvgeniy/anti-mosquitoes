@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import styled from 'styled-components'
 import {inject, observer} from 'mobx-react';
 
@@ -14,23 +14,23 @@ import OrderPopup from './OrderPopup.jsx';
 @observer
 export default class Content extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
     }
 
     render() {
         return (
-            [
-                <Navigation key={1}/>,
-                <ContentWrapper key={2}>
+            <Fragment>
+                <Navigation key={1}/>
+                <ContentWrapper>
                     <Presentation/>
                     <Advantages/>
                     <Description/>
                     <Instruction/>
                     <Calculator/>
-                </ContentWrapper>,
-                this.props.popupVisibility && <OrderPopup key={3}/>
-            ]
+                </ContentWrapper>
+                {this.props.popupVisibility && <OrderPopup/>}
+            </Fragment>
         );
     }
 
@@ -39,8 +39,16 @@ export default class Content extends React.Component {
 const ContentWrapper = styled.div`
     margin-right: auto;
     margin-left: auto;
-    width: 100%;
+    width: 65%;
     box-sizing: border-box;
     display: block;
     top:3em
+    
+     @media (max-width: 1200px) {
+        width: 85%;
+    } 
+    
+    @media (max-width: 600px) {
+        width: 95%;
+    }
 `;
