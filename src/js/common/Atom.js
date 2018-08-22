@@ -39,7 +39,6 @@ export const InlineBlock = styled.div`
     align-items: center;
     justify-content: center;
     flex-grow:1;
-    border: 1px solid #1477da;
     padding: 3rem;
     @media (max-width: 768px) {
         flex-direction: column;

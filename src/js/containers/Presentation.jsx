@@ -20,3 +20,7 @@ export default function Presentation() {
         </Block>
     );
 }
+
+// const BlockWrapper = styled(Block)`
+//     background-image: url(${bg});
+// `;

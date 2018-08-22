@@ -26,7 +26,6 @@ export default function Advantages() {
 }
 
 const AdvantageCards = styled.div`
-    border: 1px solid #1477da;
     display: flex;
     flex-wrap: wrap;
     alight-items: center;
