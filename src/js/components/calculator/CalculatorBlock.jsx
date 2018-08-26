@@ -116,21 +116,32 @@ export default class CalculatorBlock extends React.Component {
 const InputsWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 `;
 
 const InputWithLabel = styled.div`
     padding-top: 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 95%
+
+    @media (max-width: 550px) {
+      flex-direction: column;
+          justify-content: center;
+          align-items: center;
+    }
 `;
 
 const Input = styled(FormControl)`
-    width: 171px;
+    width 171px; 
     type: 'text'
 `;
 
 const Select = styled(FormControl).attrs({
     componentClass: 'select'
 })` 
-    width: 175px;
+        width 171px; 
 `;

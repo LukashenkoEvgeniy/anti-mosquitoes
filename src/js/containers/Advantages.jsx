@@ -15,11 +15,12 @@ export default function Advantages() {
             <Header>{'ПРЕИМУЩЕСТВА РАМОЧНОЙ СЕТКИ'}</Header>
 
             <AdvantageCards>
-                {advantages.map((item, index) => <AdvantageCard
-                    image={item.image}
-                    key={index}
-                    title={item.title}
-                />)}
+                {advantages.map((item, index) =>
+                    <AdvantageCard
+                        image={item.image}
+                        key={index}
+                        title={item.title}
+                    />)}
             </AdvantageCards>
         </Block>
     );

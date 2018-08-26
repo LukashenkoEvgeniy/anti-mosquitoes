@@ -16,6 +16,7 @@ export const Column = styled.div`
 `;
 
 export const H1 = styled.h1`
+    text-align: center;
     color: ${props => props.color ? props.color : defaultTextColor};
 `;
 
@@ -30,7 +31,7 @@ export const Block = styled.section`
     align-items: center;
     min-height: 90vh;
     border-bottom: 1px solid #dee2e6;
-    padding: 3rem;
+    padding: 3rem 5px 3rem 5px;
 `;
 
 export const InlineBlock = styled.div`
@@ -39,7 +40,7 @@ export const InlineBlock = styled.div`
     align-items: center;
     justify-content: center;
     flex-grow:1;
-    padding: 3rem;
+    padding: 0 5px 0 5px;
     @media (max-width: 768px) {
         flex-direction: column;
     }

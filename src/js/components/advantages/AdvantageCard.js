@@ -6,7 +6,7 @@ export default function AdvantageCard({title, image}) {
     return (
         <CardWrapper>
             <ImageWrapper src={image} alt={title} circle/>
-            <p>{title}</p>
+            <TextWrapper>{title}</TextWrapper>
         </CardWrapper>
     )
 }
@@ -23,3 +23,8 @@ const ImageWrapper = styled(Image)`
     width: 150px;
     height: 150px;
 `;
+
+const TextWrapper = styled.p`
+    text-align: center;
+`;
+

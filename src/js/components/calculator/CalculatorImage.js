@@ -11,5 +11,5 @@ export default function CalculatorImage({}) {
 }
 
 const ImgWrapper = styled.img`
-    height: 100%;
+    height: 300px;
 `;

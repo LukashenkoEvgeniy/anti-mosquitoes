@@ -15,5 +15,7 @@ export default function PresentationText({}) {
 }
 
 const TextWrapper = styled.div`
-    
+    ${H2} {
+        text-align: left;
+    } 
 `;

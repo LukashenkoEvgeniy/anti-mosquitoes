@@ -18,22 +18,39 @@ export default class Content extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.uiStore.addNavRef('Presentation', this.presentation);
+        this.props.uiStore.addNavRef('Advantages', this.advantages);
+        this.props.uiStore.addNavRef('Description', this.description);
+        this.props.uiStore.addNavRef('Instruction', this.instruction);
+        this.props.uiStore.addNavRef('Calculator', this.calculator);
+    }
+
     render() {
         return (
             <Fragment>
                 <Navigation key={1}/>
                 <ContentWrapper>
-                    <Presentation/>
-                    <Advantages/>
-                    <Description/>
-                    <Instruction/>
-                    <Calculator/>
+                    <div key={1} ref={(ref) => this.presentation = ref}>
+                        <Presentation/>
+                    </div>
+                    <div key={2} ref={(ref) => this.advantages = ref}>
+                        <Advantages/>
+                    </div>
+                    <div key={3} ref={(ref) => this.description = ref}>
+                        <Description/>
+                    </div>
+                    <div key={4} ref={(ref) => this.instruction = ref}>
+                        <Instruction/>
+                    </div>
+                    <div key={5} ref={(ref) => this.calculator = ref}>
+                        <Calculator/>
+                    </div>
                 </ContentWrapper>
                 {this.props.popupVisibility && <OrderPopup/>}
             </Fragment>
         );
     }
-
 }
 
 const ContentWrapper = styled.div`
@@ -44,7 +61,7 @@ const ContentWrapper = styled.div`
     display: block;
     top:3em
     
-     @media (max-width: 1200px) {
+     @media (max-device-width: 1200px) {
         width: 85%;
     } 
     

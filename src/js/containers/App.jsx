@@ -4,13 +4,13 @@ import { hot } from 'react-hot-loader'
 
 import Content from './Content.jsx';
 import Navigation from './Navigation.jsx';
-import BasketStore from '../stores/BasketStore';
 import UIStore from '../stores/UIStore';
+import BasketStore from '../stores/BasketStore';
 
 function App() {
     const stores = {
-        basketStore : new BasketStore(),
-        uiStore: new UIStore()
+        uiStore: new UIStore(),
+        basketStore: new BasketStore()
     };
 
     return (

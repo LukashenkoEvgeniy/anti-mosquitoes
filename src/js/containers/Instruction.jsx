@@ -31,6 +31,6 @@ export default function Instruction() {
 }
 
 const PanelWrapper = styled(Panel)`
-    width: 100%;
+    width: 95%;
 `;
 

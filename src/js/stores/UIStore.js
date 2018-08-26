@@ -1,8 +1,9 @@
 import {computed, observable, action} from 'mobx';
 
-export default class BasketStore {
+export default class UIStore {
 
     @observable popupVisible = false;
+    navRefs = new Map();
 
     @action
      tooglePopup(){
@@ -12,5 +13,13 @@ export default class BasketStore {
     @computed
     get popupVisibility(){
         return this.popupVisible;
+    }
+
+    addNavRef(name, ref){
+        this.navRefs.set(name, ref);
+    }
+
+    getNavRef(name){
+        return this.navRefs.get(name);
     }
 }

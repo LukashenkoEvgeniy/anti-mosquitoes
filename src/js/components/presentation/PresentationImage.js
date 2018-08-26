@@ -11,5 +11,5 @@ export default function PresentationImage({}) {
 }
 
 const ImgWrapper = styled.img`
-    height: 100%;
+    height: 300px;
 `;
