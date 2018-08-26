@@ -6,8 +6,9 @@ import {H2} from '../../common/Atom';
 import {calc, validator} from '../../utils/PriceCalculator';
 import ResultBlock from './ResultBlock.jsx';
 import {Button, FormControl} from 'react-bootstrap';
+import OrderContract from "../../stores/OrderContract";
 
-@inject('basketStore')
+@inject('orderStore')
 export default class CalculatorBlock extends React.Component {
 
     constructor(props) {
@@ -16,12 +17,13 @@ export default class CalculatorBlock extends React.Component {
             type: 'plastic',
             color: 'brown',
             height: 1000,
-            width: 700
+            width: 700,
+            price: 0
         };
     }
 
     onAddToBasket(){
-        this.props.basketStore.add(this.state)
+        this.props.orderStore.add(new OrderContract(this.state))
     }
 
     calcPrice() {
@@ -59,7 +61,9 @@ export default class CalculatorBlock extends React.Component {
                     <label>{'Ширина москитной сетки (мм):'}</label>
                     <Input
                         onChange={event => this.handleInputChange('width', event.target.value)}
-                        placeholder={this.state.width}/>
+                        placeholder={this.state.width}
+                        type="number"
+                    />
 
                 </InputWithLabel>
 
@@ -67,7 +71,10 @@ export default class CalculatorBlock extends React.Component {
                     <label>{'Высота москитной сетки (мм):'}</label>
                     <Input
                         onChange={event => this.handleInputChange('height', event.target.value)}
-                        placeholder={this.state.height}/>
+                        placeholder={this.state.height}
+                        type="number"
+                    />
+
 
                 </InputWithLabel>
 

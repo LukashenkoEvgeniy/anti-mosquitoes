@@ -8,7 +8,7 @@ import Instruction from './Instruction.jsx';
 import Calculator from './Calculator.jsx';
 import Description from './Description.jsx';
 import Navigation from './Navigation.jsx';
-import OrderPopup from './OrderPopup.jsx';
+import OrderModal from './OrderModal.jsx';
 
 @inject('uiStore')
 @observer
@@ -47,7 +47,7 @@ export default class Content extends React.Component {
                         <Calculator/>
                     </div>
                 </ContentWrapper>
-                {this.props.popupVisibility && <OrderPopup/>}
+                <OrderModal/>
             </Fragment>
         );
     }

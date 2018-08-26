@@ -6,7 +6,7 @@ import scrollToComponent from 'react-scroll-to-component';
 import {Glyphicon, Nav, Navbar, NavItem} from 'react-bootstrap';
 import Advantages from './Advantages.jsx';
 
-const Navigation = inject('basketStore', 'uiStore')(observer(({basketStore, uiStore}) => {
+const Navigation = inject('orderStore', 'uiStore')(observer(({basketStore, uiStore}) => {
 
     function scroll(component) {
         console.log('scroll to', component);
@@ -61,7 +61,9 @@ const Navigation = inject('basketStore', 'uiStore')(observer(({basketStore, uiSt
                 <Nav pullRight>
                     <NavItem
                         eventKey={1}
-                        href="#">
+                        href="#"
+                        onClick={() => uiStore.showModal()}
+                    >
                         <Glyphicon glyph="glyphicon glyphicon-shopping-cart" />
                     </NavItem>
                 </Nav>
