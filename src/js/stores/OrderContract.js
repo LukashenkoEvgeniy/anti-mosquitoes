@@ -7,6 +7,7 @@ export default class OrderContract {
     height = null;
     width = null;
     price = null;
+    oldPrice = null;
 
     constructor(contract = {}){
         this.color = contract.color;
@@ -14,6 +15,7 @@ export default class OrderContract {
         this.height = contract.height;
         this.width = contract.width;
         this.price = contract.price;
+        this.oldPrice = contract.oldPrice;
     }
 
     set setColor(value) {

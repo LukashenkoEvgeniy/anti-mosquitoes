@@ -33,8 +33,11 @@ export function calc(height, width, color, material) {
     if (color !== 'white') {
         l = 10
     }
-    let price = +(square * (s + l + n) + baseMargin).toFixed(0);
-    let oldPrice = +(price / 0.86).toFixed(0);
+    let oldPrice = +(square * (s + l + n) + baseMargin).toFixed(0); //SWITCH WITH PRICE
+    let price = +(oldPrice / 0.75).toFixed(0);
+
+
+    console.log(price, oldPrice)
 
     return {price, oldPrice, square}
 }

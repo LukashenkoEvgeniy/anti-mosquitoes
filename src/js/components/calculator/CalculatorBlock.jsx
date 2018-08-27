@@ -11,25 +11,28 @@ import OrderContract from "../../stores/OrderContract";
 @inject('orderStore')
 export default class CalculatorBlock extends React.Component {
 
+    initState = {
+        type: 'plastic',
+        color: 'brown',
+        height: 0,
+        width: 0,
+        price: 0
+    };
+
     constructor(props) {
         super(props);
-        this.state = {
-            type: 'plastic',
-            color: 'brown',
-            height: 1000,
-            width: 700,
-            price: 0
-        };
+        this.state = this.initState;
     }
 
     onAddToBasket(){
-        this.props.orderStore.add(new OrderContract(this.state))
+        this.props.orderStore.add(new OrderContract(this.state));
+        this.setState(this.initState);
     }
 
     calcPrice() {
         this.setState({error: null});
         if (validator(this.state.height, this.state.width)) {
-            this.setState({error: validator(this.state.height, this.state.width)})
+            this.setState({error: validator(this.state.height, this.state.width)});
             return;
         }
         let {price, oldPrice, square} = calc(this.state.height, this.state.width, this.state.color, this.state.type);
@@ -105,14 +108,14 @@ export default class CalculatorBlock extends React.Component {
                     <p>{this.state.error}</p>
                 }
                 {
-                    !this.state.error && this.state.price && <ResultBlock
+                    !this.state.error && !!this.state.price && <ResultBlock
                         oldPrice={this.state.oldPrice}
                         price={this.state.price}
                         square={this.state.square}
                     />
                 }
                 {
-                    !this.state.error && this.state.price &&
+                    !!!this.state.error && !!this.state.price &&
                     <Button bsStyle="success" onClick={()=>this.onAddToBasket()}>{'Добавить в корзину'}</Button>
                 }
             </InputsWrapper>
