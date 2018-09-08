@@ -25,11 +25,11 @@ module.exports = {
                     }
                 ]
             },
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: ['eslint-loader']
-            },
+            // {
+            //     test: /\.(js|jsx)$/,
+            //     exclude: /node_modules/,
+            //     use: ['eslint-loader']
+            // },
             {
                 test: /\.(png|jpg)$/,
                 loader: 'url-loader?limit=8192'

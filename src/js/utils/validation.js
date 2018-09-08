@@ -4,7 +4,7 @@ export function emailValidation(value) {
 }
 
 export function phoneValidation(value) {
-    const re = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
+    const re = /^((.\d{2})?\d{3}())?(-|\s)?\d{3}(-|\s)?\d{4}$/;
     return re.test(String(value).toLowerCase());
 }
 

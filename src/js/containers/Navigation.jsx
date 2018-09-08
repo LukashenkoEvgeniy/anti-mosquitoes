@@ -3,10 +3,10 @@ import {inject, observer} from 'mobx-react';
 import styled from 'styled-components';
 import scrollToComponent from 'react-scroll-to-component';
 
-import {Glyphicon, Nav, Navbar, NavItem} from 'react-bootstrap';
+import {Badge, Glyphicon, Nav, Navbar, NavItem} from 'react-bootstrap';
 import Advantages from './Advantages.jsx';
 
-const Navigation = inject('orderStore', 'uiStore')(observer(({basketStore, uiStore}) => {
+const Navigation = inject('orderStore', 'uiStore')(observer(({orderStore, uiStore}) => {
 
     function scroll(component) {
         console.log('scroll to', component);
@@ -59,13 +59,14 @@ const Navigation = inject('orderStore', 'uiStore')(observer(({basketStore, uiSto
 
                 </Nav>
                 <Nav pullRight>
-                    <NavItem
+                    <NavItemBasked
                         eventKey={1}
                         href="#"
-                        onClick={() => uiStore.showModal()}
+                        onClick={() => orderStore.ifOrderExist ? uiStore.showModal() : null}
                     >
+                        {orderStore.ifOrderExist ? <Badge>{orderStore.countItems}</Badge> : null}
                         <Glyphicon glyph="glyphicon glyphicon-shopping-cart" />
-                    </NavItem>
+                    </NavItemBasked>
                 </Nav>
             </Navbar.Collapse>
         </NavbarWrapper>
@@ -79,4 +80,11 @@ const NavbarWrapper = styled(Navbar)`
     border-radius: 0px;
     position: fixed;
     width: 100%;
+`;
+
+const NavItemBasked = styled(NavItem)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 `;

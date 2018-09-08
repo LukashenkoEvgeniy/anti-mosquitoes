@@ -2,6 +2,7 @@ import {computed, observable} from 'mobx';
 
 export default class OrderContract {
 
+    id = null;
     color = null;
     type = null;
     height = null;
@@ -10,6 +11,7 @@ export default class OrderContract {
     oldPrice = null;
 
     constructor(contract = {}){
+        this.id = '_' + Math.random().toString(36).substr(2, 9);
         this.color = contract.color;
         this.type = contract.type;
         this.height = contract.height;
