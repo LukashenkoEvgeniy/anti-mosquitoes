@@ -38,7 +38,7 @@ export default class ModalContent extends React.Component {
                 this.setState({message: message});
                 setTimeout(() => this.hideModal(), 5000)
             })
-            .catch(message => this.setState({message: message}))
+            .catch(e => this.setState({message: "Проблемы с сервером"}))
     }
 
 
