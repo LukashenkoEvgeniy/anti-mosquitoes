@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components'
-import { inject } from 'mobx-react';
+import {inject} from 'mobx-react';
 
 import {H2} from '../../common/Atom';
 import {calc, validator} from '../../utils/PriceCalculator';
 import ResultBlock from './ResultBlock.jsx';
-import {Button, FormControl} from 'react-bootstrap';
+import {Badge, Button, FormControl} from 'react-bootstrap';
 import OrderContract from "../../stores/OrderContract";
 
-@inject('orderStore')
+@inject('orderStore', 'uiStore')
 export default class CalculatorBlock extends React.Component {
 
     initState = {
@@ -24,7 +24,7 @@ export default class CalculatorBlock extends React.Component {
         this.state = this.initState;
     }
 
-    onAddToBasket(){
+    onAddToBasket() {
         this.props.orderStore.add(new OrderContract(this.state));
         this.setState(this.initState);
     }
@@ -105,7 +105,7 @@ export default class CalculatorBlock extends React.Component {
                     </Select>
                 </InputWithLabel>
                 {this.state.error &&
-                    <p>{this.state.error}</p>
+                <p>{this.state.error}</p>
                 }
                 {
                     !this.state.error && !!this.state.price && <ResultBlock
@@ -116,7 +116,12 @@ export default class CalculatorBlock extends React.Component {
                 }
                 {
                     !!!this.state.error && !!this.state.price &&
-                    <Button bsStyle="success" onClick={()=>this.onAddToBasket()}>{'Добавить в корзину'}</Button>
+                    <ButtonWrapper bsStyle="success" onClick={() => this.onAddToBasket()}>{'Добавить в корзину'}</ButtonWrapper>
+                }
+                {
+                    this.props.orderStore.ifOrderExist &&
+                    <ButtonWrapper bsStyle="success"
+                            onClick={() => this.props.orderStore.ifOrderExist ? this.props.uiStore.showModal() : null}>{'Оформить заказ'}</ButtonWrapper>
                 }
             </InputsWrapper>
         )
@@ -136,7 +141,7 @@ const InputWithLabel = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 95%
+    width: 95%;
 
     @media (max-width: 550px) {
       flex-direction: column;
@@ -146,12 +151,15 @@ const InputWithLabel = styled.div`
 `;
 
 const Input = styled(FormControl)`
-    width 171px; 
-    type: 'text'
+    width: 171px; 
 `;
 
 const Select = styled(FormControl).attrs({
     componentClass: 'select'
 })` 
-        width 171px; 
+        width: 171px; 
+`;
+
+const ButtonWrapper = styled(Button)`
+    margin: 5px;
 `;

@@ -48,50 +48,53 @@ export default class ModalContent extends React.Component {
             <Modal
                 onHide={this.hideModal}
                 show={uiStore.modalVisiblity}>
+
                 <Modal.Header closeButton>
                     <Modal.Title>{'Оформление заказа'}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Table
-                        bordered
-                        condensed
-                        hover
-                        responsive
-                        striped>
-                        <thead>
-                        <tr>
-                            <HeaderCell>#</HeaderCell>
-                            <HeaderCell>{'Тип'}</HeaderCell>
-                            <HeaderCell>{'Цвет'}</HeaderCell>
-                            <HeaderCell>{'Размеры'}</HeaderCell>
-                            <HeaderCell>{'Стоимость'}</HeaderCell>
-                            <HeaderCell>{'Удалить'}</HeaderCell>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {orderStore.getAll().map((orderContract, index) => (
-                            <tr key={orderContract.id}>
-                                <Cell>{++index}</Cell>
-                                <Cell>{types[orderContract.type]}</Cell>
-                                <Cell>{colors[orderContract.color]}</Cell>
-                                <Cell>{`${orderContract.height}x${orderContract.width}`}</Cell>
-                                <Cell>{orderContract.price}</Cell>
-                                <Cell>
-                                    <Button
-                                        bsStyle="danger"
-                                        onClick={() => this.onDeleteClick(orderContract)}
-                                    >
-                                        <Glyphicon
-                                            glyph="glyphicon glyphicon-trash"/>
-                                    </Button>
-                                </Cell>
+                    {this.state.message ? <ResponseMessage>{this.state.message}</ResponseMessage> :
+                        <Table
+                            bordered
+                            condensed
+                            hover
+                            responsive
+                            striped>
+                            <thead>
+                            <tr>
+                                <HeaderCell>#</HeaderCell>
+                                <HeaderCell>{'Тип'}</HeaderCell>
+                                <HeaderCell>{'Цвет'}</HeaderCell>
+                                <HeaderCell>{'Размеры'}</HeaderCell>
+                                <HeaderCell>{'Стоимость'}</HeaderCell>
+                                <HeaderCell>{'Удалить'}</HeaderCell>
                             </tr>
-                        ))}
+                            </thead>
+                            <tbody>
+                            {orderStore.getAll().map((orderContract, index) => (
+                                <tr key={orderContract.id}>
+                                    <Cell>{++index}</Cell>
+                                    <Cell>{types[orderContract.type]}</Cell>
+                                    <Cell>{colors[orderContract.color]}</Cell>
+                                    <Cell>{`${orderContract.height}x${orderContract.width}`}</Cell>
+                                    <Cell>{orderContract.price}</Cell>
+                                    <Cell>
+                                        <Button
+                                            bsStyle="danger"
+                                            onClick={() => this.onDeleteClick(orderContract)}
+                                        >
+                                            <Glyphicon
+                                                glyph="glyphicon glyphicon-trash"/>
+                                        </Button>
+                                    </Cell>
+                                </tr>
+                            ))}
 
-                        </tbody>
-                    </Table>
+                            </tbody>
+                        </Table>
+                    }
                 </Modal.Body>
-                <OrderForm>
+                {!this.state.message && <OrderForm>
                     <PriceLabel>{`К оплате ${orderStore.finalPrice} грн`}</PriceLabel>
 
                     <InputWithValidation
@@ -99,6 +102,12 @@ export default class ModalContent extends React.Component {
                         name={'email'}
                         placeholder={'Ваш email'}
                         validation={emailValidation}
+                    />
+                    <InputWithValidation
+                        handleInputChange={(name, value) => this.handleInputChange(name, value)}
+                        name={'name'}
+                        placeholder={'ФИО'}
+                        validation={addressValidation}
                     />
                     <InputWithValidation
                         handleInputChange={(name, value) => this.handleInputChange(name, value)}
@@ -112,8 +121,7 @@ export default class ModalContent extends React.Component {
                         placeholder={'Адрес доставки'}
                         validation={addressValidation}
                     />
-                    {this.state.message && <ResponseMessage>{this.state.message}</ResponseMessage>}
-                </OrderForm>
+                </OrderForm>}
                 <Modal.Footer>
                     <Button onClick={this.hideModal}>{'Закрыть'}</Button>
                     <Button onClick={this.ordering}>{'Оформить заказ'}</Button>
