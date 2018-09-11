@@ -65,6 +65,7 @@ export default class CalculatorBlock extends React.Component {
                     <Input
                         step="100"
                         max="3000"
+                        min="200"
                         onChange={event => this.handleInputChange('width', event.target.value)}
                         placeholder={this.state.width}
                         type="number"
@@ -163,6 +164,7 @@ const Input = styled(FormControl)`
     width: 171px; 
     background: #46484a;
     color: white;
+    border-radius: 0px;
 `;
 
 const Select = styled(FormControl).attrs({
@@ -171,6 +173,8 @@ const Select = styled(FormControl).attrs({
         width: 171px; 
         background: #46484a;
         color: white;
+        border-radius: 0px;
+
         
 `;
 

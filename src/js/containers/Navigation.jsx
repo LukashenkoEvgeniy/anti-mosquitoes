@@ -64,7 +64,7 @@ const Navigation = inject('orderStore', 'uiStore')(observer(({orderStore, uiStor
                         href="#"
                         onClick={() => orderStore.ifOrderExist ? uiStore.showModal() : null}
                     >
-                        {orderStore.ifOrderExist ? <Badge>{orderStore.countItems}</Badge> : null}
+                        {orderStore.ifOrderExist ? <BadgeWrapper>{orderStore.countItems}</BadgeWrapper> : null}
                         <Glyphicon glyph="glyphicon glyphicon-shopping-cart"/>
                     </NavItemBasked>
                 </Nav>
@@ -75,6 +75,11 @@ const Navigation = inject('orderStore', 'uiStore')(observer(({orderStore, uiStor
 
 export default Navigation;
 
+
+
+const BadgeWrapper = styled(Navbar)`
+    background: rgba(106, 6, 145, 0.97);
+`;
 
 const NavbarWrapper = styled(Navbar)`
     border-radius: 0px;

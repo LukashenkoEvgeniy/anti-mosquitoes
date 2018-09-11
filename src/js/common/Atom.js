@@ -31,7 +31,7 @@ export const Block = styled.section`
     flex-direction: column;
     align-items: center;
     min-height: 90vh;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid rgba(88, 22, 113, 0.97);
     padding: 3rem 5px 3rem 5px;
 `;
 
