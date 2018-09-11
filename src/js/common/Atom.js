@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 import {defaultTextColor} from './Colors';
 
-
-
 export const Row = styled.div`
     display: flex;
     flex-direction: row;
@@ -31,7 +29,7 @@ export const Block = styled.section`
     flex-direction: column;
     align-items: center;
     min-height: 90vh;
-    border-bottom: 1px solid rgba(88, 22, 113, 0.97);
+    border-bottom: 1px solid #7B63AB ;
     padding: 3rem 5px 3rem 5px;
 `;
 

@@ -8,6 +8,7 @@ export default function ResultBlock({price, oldPrice, square}) {
             <SmallText>{`Площадь москитной сетки: ${square} м2`}</SmallText>
             <p>{`Стоимость москитной сетки: ${price} грн`}</p>
             <SmallText>{'крепления (ручки, зажимы) уже учтены в стоимости'}</SmallText>
+            <SmallText>{'доставка не  входит в стоимость'}</SmallText>
         </Block>
     )
 }

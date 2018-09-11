@@ -3,6 +3,11 @@ const CopyWebpackPlugin  = require('copy-webpack-plugin');
 
 module.exports = {
     devtool: 'source-map',
+
+    resolve: {
+        extensions: ['.js', '.jsx']
+    },
+
     module: {
         rules: [
             {

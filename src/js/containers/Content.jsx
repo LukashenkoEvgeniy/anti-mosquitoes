@@ -2,13 +2,14 @@ import React, {Fragment} from 'react';
 import styled from 'styled-components'
 import {inject, observer} from 'mobx-react';
 
-import Advantages from './Advantages.jsx';
-import Presentation from './Presentation.jsx';
-import Instruction from './Instruction.jsx';
-import Calculator from './Calculator.jsx';
-import Description from './Description.jsx';
-import Navigation from './Navigation.jsx';
-import OrderModal from './OrderModal.jsx';
+import Advantages from './Advantages';
+import Presentation from './Presentation';
+import Instruction from './Instruction';
+import Calculator from './Calculator';
+import Description from './Description';
+import Navigation from './Navigation';
+import OrderModal from './OrderModal';
+import Shipping from "./Shipping";
 
 @inject('uiStore')
 @observer
@@ -24,6 +25,7 @@ export default class Content extends React.Component {
         this.props.uiStore.addNavRef('Description', this.description);
         this.props.uiStore.addNavRef('Instruction', this.instruction);
         this.props.uiStore.addNavRef('Calculator', this.calculator);
+        this.props.uiStore.addNavRef('Shipping', this.shipping);
     }
 
     render() {
@@ -45,6 +47,9 @@ export default class Content extends React.Component {
                     </div>
                     <div key={5} ref={(ref) => this.calculator = ref}>
                         <Calculator/>
+                    </div>
+                    <div key={6} ref={(ref) => this.shipping = ref}>
+                        <Shipping/>
                     </div>
                 </ContentWrapper>
                 <OrderModal/>

@@ -9,8 +9,6 @@ import Advantages from './Advantages.jsx';
 const Navigation = inject('orderStore', 'uiStore')(observer(({orderStore, uiStore}) => {
 
     function scroll(component) {
-        console.log('scroll to', component);
-        console.log(uiStore.getNavRef(component));
         scrollToComponent(uiStore.getNavRef(component), {offset: 0, align: 'top', duration: 500, ease: 'outCube'});
     }
 
@@ -19,9 +17,9 @@ const Navigation = inject('orderStore', 'uiStore')(observer(({orderStore, uiStor
             collapseOnSelect
             inverse>
             <Navbar.Header>
-                <Navbar.Brand>
-                    <a onClick={() => scroll('Presentation')}>{'Anti-Mosquitoes'}</a>
-                </Navbar.Brand>
+                <NavbarBrand>
+                    <a onClick={() => scroll('Presentation')}>{'ANTI-MOSQUITOES'}</a>
+                </NavbarBrand>
                 <Navbar.Toggle/>
             </Navbar.Header>
             <Navbar.Collapse>
@@ -56,6 +54,12 @@ const Navigation = inject('orderStore', 'uiStore')(observer(({orderStore, uiStor
                     >
                         {'СТОИМОСТЬ'}
                     </NavItem>
+                    <NavItem
+                        eventKey={5}
+                        onClick={() => scroll('Shipping')}
+                    >
+                        {'ОПЛАТА И ДОСТАВКА'}
+                    </NavItem>
 
                 </Nav>
                 <Nav pullRight>
@@ -75,14 +79,23 @@ const Navigation = inject('orderStore', 'uiStore')(observer(({orderStore, uiStor
 
 export default Navigation;
 
-
-
 const BadgeWrapper = styled(Navbar)`
     background: rgba(106, 6, 145, 0.97);
+    
+    ${Navbar.Collapse} {
+      ${Nav.Item}{
+        a:hover{
+         color: #D15D64;
+      }   
+      }
+    }
 `;
 
 const NavbarWrapper = styled(Navbar)`
     border-radius: 0px;
+    background: #27363A;
+    border: 0px;
+    box-shadow: 0 0 10px #FCD05C;
     position: fixed;
     width: 100%;
     z-index: 10;
@@ -92,5 +105,8 @@ const NavItemBasked = styled(NavItem)`
     display: flex;
     justify-content: center;
     align-items: center;
-    
+`;
+
+const NavbarBrand = styled(Navbar.Brand)`
+  color: #7B63AB; !important;
 `;
