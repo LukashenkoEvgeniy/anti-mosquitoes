@@ -31,7 +31,7 @@ module.exports = {
             //     use: ['eslint-loader']
             // },
             {
-                test: /\.(png|jpg)$/,
+                test: /\.(png|jpg|svg)$/,
                 loader: 'url-loader?limit=8192'
             },
             {

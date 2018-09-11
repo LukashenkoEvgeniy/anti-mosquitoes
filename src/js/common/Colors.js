@@ -1,3 +1,3 @@
 
 
-export const defaultTextColor = '#1e3333';
+export const defaultTextColor = 'rgba(255,255,255,0.65) ';

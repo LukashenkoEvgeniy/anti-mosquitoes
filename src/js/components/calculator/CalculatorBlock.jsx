@@ -61,8 +61,10 @@ export default class CalculatorBlock extends React.Component {
                 <H2>{'Расчет стоимости сетки на окна'}</H2>
 
                 <InputWithLabel>
-                    <label>{'Ширина москитной сетки (мм):'}</label>
+                    <label>{'Ширина сетки (мм):'}</label>
                     <Input
+                        step="100"
+                        max="3000"
                         onChange={event => this.handleInputChange('width', event.target.value)}
                         placeholder={this.state.width}
                         type="number"
@@ -71,8 +73,11 @@ export default class CalculatorBlock extends React.Component {
                 </InputWithLabel>
 
                 <InputWithLabel>
-                    <label>{'Высота москитной сетки (мм):'}</label>
+                    <label>{'Высота сетки (мм):'}</label>
                     <Input
+                        step="100"
+                        min="2000"
+                        max="3000"
                         onChange={event => this.handleInputChange('height', event.target.value)}
                         placeholder={this.state.height}
                         type="number"
@@ -142,6 +147,10 @@ const InputWithLabel = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 95%;
+    
+    label {
+      font-weight: 100;
+    }
 
     @media (max-width: 550px) {
       flex-direction: column;
@@ -152,14 +161,20 @@ const InputWithLabel = styled.div`
 
 const Input = styled(FormControl)`
     width: 171px; 
+    background: #46484a;
+    color: white;
 `;
 
 const Select = styled(FormControl).attrs({
     componentClass: 'select'
 })` 
         width: 171px; 
+        background: #46484a;
+        color: white;
+        
 `;
 
 const ButtonWrapper = styled(Button)`
     margin: 5px;
 `;
+

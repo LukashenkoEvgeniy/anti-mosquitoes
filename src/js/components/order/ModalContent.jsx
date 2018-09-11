@@ -45,7 +45,7 @@ export default class ModalContent extends React.Component {
     render() {
         const {uiStore, orderStore} = this.props;
         return (
-            <Modal
+            <ModalWrapper
                 onHide={this.hideModal}
                 show={uiStore.modalVisiblity}>
 
@@ -126,10 +126,16 @@ export default class ModalContent extends React.Component {
                     <Button onClick={this.hideModal}>{'Закрыть'}</Button>
                     <Button onClick={this.ordering}>{'Оформить заказ'}</Button>
                 </Modal.Footer>
-            </Modal>
+            </ModalWrapper>
         );
     }
 }
+
+
+const ModalWrapper = styled(Modal)`
+  color: #191c20;
+`;
+
 
 const PriceLabel = styled(Label)`
    font-size: 18px;

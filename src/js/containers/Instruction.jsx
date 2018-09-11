@@ -32,5 +32,7 @@ export default function Instruction() {
 
 const PanelWrapper = styled(Panel)`
     width: 95%;
+    color: #000;
+    opacity: 0.8;
 `;
 

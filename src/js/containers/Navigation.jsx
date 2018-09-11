@@ -22,7 +22,7 @@ const Navigation = inject('orderStore', 'uiStore')(observer(({orderStore, uiStor
                 <Navbar.Brand>
                     <a onClick={() => scroll('Presentation')}>{'Anti-Mosquitoes'}</a>
                 </Navbar.Brand>
-                <Navbar.Toggle />
+                <Navbar.Toggle/>
             </Navbar.Header>
             <Navbar.Collapse>
                 <Nav>
@@ -65,7 +65,7 @@ const Navigation = inject('orderStore', 'uiStore')(observer(({orderStore, uiStor
                         onClick={() => orderStore.ifOrderExist ? uiStore.showModal() : null}
                     >
                         {orderStore.ifOrderExist ? <Badge>{orderStore.countItems}</Badge> : null}
-                        <Glyphicon glyph="glyphicon glyphicon-shopping-cart" />
+                        <Glyphicon glyph="glyphicon glyphicon-shopping-cart"/>
                     </NavItemBasked>
                 </Nav>
             </Navbar.Collapse>
@@ -80,6 +80,7 @@ const NavbarWrapper = styled(Navbar)`
     border-radius: 0px;
     position: fixed;
     width: 100%;
+    z-index: 10;
 `;
 
 const NavItemBasked = styled(NavItem)`

@@ -17,6 +17,7 @@ export const Column = styled.div`
 
 export const H1 = styled.h1`
     text-align: center;
+    font-family: 'Lobster', cursive;
     color: ${props => props.color ? props.color : defaultTextColor};
 `;
 
@@ -27,7 +28,7 @@ export const H2 = styled.h2`
 
 export const Block = styled.section`
     display: flex;
-    flex-direction: column
+    flex-direction: column;
     align-items: center;
     min-height: 90vh;
     border-bottom: 1px solid #dee2e6;

@@ -59,7 +59,7 @@ const ContentWrapper = styled.div`
     width: 65%;
     box-sizing: border-box;
     display: block;
-    top:3em
+    top:3em;
     
      @media (max-device-width: 1200px) {
         width: 85%;
