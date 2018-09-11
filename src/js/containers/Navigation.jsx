@@ -79,16 +79,8 @@ const Navigation = inject('orderStore', 'uiStore')(observer(({orderStore, uiStor
 
 export default Navigation;
 
-const BadgeWrapper = styled(Navbar)`
-    background: rgba(106, 6, 145, 0.97);
-    
-    ${Navbar.Collapse} {
-      ${Nav.Item}{
-        a:hover{
-         color: #D15D64;
-      }   
-      }
-    }
+const BadgeWrapper = styled(Badge)`
+    background: #7B63AB;
 `;
 
 const NavbarWrapper = styled(Navbar)`
