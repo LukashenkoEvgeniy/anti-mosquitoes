@@ -13,7 +13,7 @@ export default function Advantages() {
     return (
         <Block id={'advantages'}
                data-aos="fade-up"
-               data-aos-offset="200"
+               data-aos-offset="100"
                data-aos-delay="50"
                data-aos-duration="1000"
                data-aos-easing="ease-in-out"
@@ -38,9 +38,9 @@ export default function Advantages() {
 const AdvantageCards = styled.div`
     display: flex;
     flex-wrap: wrap;
-    alight-items: center;
+    align-items: center;
     justify-content: center;
-    padding-top: 10em;
+    padding-top: 3rem;
 `;
 
 
