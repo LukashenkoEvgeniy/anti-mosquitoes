@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components'
 import posed from 'react-pose';
 
-import desc_1 from '../../../static/img/desc_1.JPG';
-import desc_2 from '../../../static/img/desc_2.JPG';
-import desc_3 from '../../../static/img/desc_3.JPG';
-import ZoomImg from "../../common/ZoomImg";
+import desc_1 from '../../../static/img/desc_1.jpg';
+import desc_2 from '../../../static/img/desc_2.jpg';
+import desc_3 from '../../../static/img/desc_3.jpg';
+import ZoomImg from '../../common/ZoomImg';
 
 export default class DescriptionImage extends React.Component{
 
@@ -17,18 +17,18 @@ export default class DescriptionImage extends React.Component{
         return (
             <ImageWrapper>
                 <ZoomImg
-                    imageWidth={600}
                     imageHeight={400}
+                    imageWidth={600}
                     src={desc_1}
                 />
-                 <ZoomImg
-                    imageWidth={600}
+                <ZoomImg
                     imageHeight={400}
+                    imageWidth={600}
                     src={desc_2}
                 />
-                 <ZoomImg
-                    imageWidth={600}
+                <ZoomImg
                     imageHeight={400}
+                    imageWidth={600}
                     src={desc_3}
                 />
 
