@@ -9,7 +9,16 @@ import {Image, Panel} from "react-bootstrap";
 
 export default function Instruction() {
     return (
-        <Block id={'instruction'}>
+        <Block id={'instruction'}
+               data-aos="fade-left"
+               data-aos-offset="200"
+               data-aos-delay="50"
+               data-aos-duration="1000"
+               data-aos-easing="ease-in-out"
+               data-aos-mirror="true"
+               data-aos-once="false"
+               data-aos-anchor-placement="top-center"
+        >
             <Header>{'ИНСТРУКЦИЯ ПО ЗАМЕРАМ'}</Header>
             {instructions.map((item, index) =>
                 <PanelWrapper key={index} id="collapsible-panel-example-2" defaultExpanded>

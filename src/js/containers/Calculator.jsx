@@ -10,14 +10,21 @@ import Body from '../components/Body';
 
 export default function Calculator() {
     return (
-        <Block id={'price'}>
+        <Block id={'price'}
+               data-aos="fade-up"
+               data-aos-offset="200"
+               data-aos-delay="50"
+               data-aos-duration="1000"
+               data-aos-easing="ease-in-out"
+               data-aos-mirror="true"
+               data-aos-once="false"
+               data-aos-anchor-placement="top-center"
+        >
             <Header>{'РАСЧЁТ СТОИМОСТИ'}</Header>
             <Body>
-                <CalculatorImage/>
-                <CalculatorBlock/>
+            <CalculatorImage/>
+            <CalculatorBlock/>
             </Body>
-
-
         </Block>
     );
 }

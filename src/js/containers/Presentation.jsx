@@ -11,7 +11,16 @@ import PresentationImage from '../components/presentation/PresentationImage';
 
 export default function Presentation() {
     return (
-        <Block id={'mesh'}>
+        <Block id={'mesh'}
+               data-aos="fade-down"
+               data-aos-offset="200"
+               data-aos-delay="50"
+               data-aos-duration="1000"
+               data-aos-easing="ease-in-out"
+               data-aos-mirror="true"
+               data-aos-once="false"
+               data-aos-anchor-placement="top-center"
+        >
             <Header>{'РАМОЧНАЯ МОСКИТНАЯ СЕТКА'}</Header>
             <Body>
                 <PresentationText/>
