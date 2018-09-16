@@ -3,11 +3,12 @@ const CopyWebpackPlugin  = require('copy-webpack-plugin');
 
 module.exports = {
     devtool: 'source-map',
-
     resolve: {
         extensions: ['.js', '.jsx']
     },
-
+    output: {
+        path: __dirname + "/docs",
+    },
     module: {
         rules: [
             {

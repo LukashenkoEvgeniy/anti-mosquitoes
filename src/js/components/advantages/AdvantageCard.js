@@ -12,6 +12,7 @@ export default function AdvantageCard({title, image}) {
 }
 
 const CardWrapper = styled.div`
+    margin:  5px 0 5px 0 ;
     min-width: 380px;
     display: flex;
     flex-direction: column;

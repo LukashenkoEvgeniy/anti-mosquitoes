@@ -18,7 +18,7 @@ const Navigation = inject('orderStore', 'uiStore')(observer(({orderStore, uiStor
             inverse>
             <Navbar.Header>
                 <NavbarBrand>
-                    <a onClick={() => scroll('Presentation')}>{'ANTI-MOSQUITOES'}</a>
+                    <a onClick={() => scroll('Presentation')}><b>АНТИ-МОСКИТ</b></a>
                 </NavbarBrand>
                 <Navbar.Toggle/>
             </Navbar.Header>

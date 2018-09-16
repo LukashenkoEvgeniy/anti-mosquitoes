@@ -58,7 +58,7 @@ export default class CalculatorBlock extends React.Component {
     render() {
         return (
             <InputsWrapper>
-                <H2>{'Расчет стоимости сетки на окна'}</H2>
+                <H2>{'Расчёт стоимости сетки на окна'}</H2>
 
                 <InputWithLabel>
                     <label>{'Ширина сетки (мм):'}</label>
@@ -68,6 +68,7 @@ export default class CalculatorBlock extends React.Component {
                         min="200"
                         onChange={event => this.handleInputChange('width', event.target.value)}
                         placeholder={this.state.width}
+                        value={this.state.width}
                         type="number"
                     />
 
@@ -81,6 +82,7 @@ export default class CalculatorBlock extends React.Component {
                         max="3000"
                         onChange={event => this.handleInputChange('height', event.target.value)}
                         placeholder={this.state.height}
+                        value={this.state.height}
                         type="number"
                     />
 
@@ -122,12 +124,13 @@ export default class CalculatorBlock extends React.Component {
                 }
                 {
                     !!!this.state.error && !!this.state.price &&
-                    <ButtonWrapper bsStyle="success" onClick={() => this.onAddToBasket()}>{'Добавить в корзину'}</ButtonWrapper>
+                    <ButtonWrapper bsStyle="success"
+                                   onClick={() => this.onAddToBasket()}>{'Добавить в корзину'}</ButtonWrapper>
                 }
                 {
                     this.props.orderStore.ifOrderExist &&
                     <ButtonWrapper bsStyle="success"
-                            onClick={() => this.props.orderStore.ifOrderExist ? this.props.uiStore.showModal() : null}>{'Оформить заказ'}</ButtonWrapper>
+                                   onClick={() => this.props.orderStore.ifOrderExist ? this.props.uiStore.showModal() : null}>{'Оформить заказ'}</ButtonWrapper>
                 }
             </InputsWrapper>
         )
@@ -179,6 +182,6 @@ const Select = styled(FormControl).attrs({
 `;
 
 const ButtonWrapper = styled(Button)`
-    margin: 5px;
+    margin: 15px 5px 5px 5px;
 `;
 

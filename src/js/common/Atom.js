@@ -15,7 +15,7 @@ export const Column = styled.div`
 
 export const H1 = styled.h1`
     text-align: center;
-    font-family: serif;
+    font-family: 'Oswald', sans-serif;
     color: ${props => props.color ? props.color : defaultTextColor};
 `;
 
