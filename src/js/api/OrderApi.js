@@ -1,7 +1,7 @@
 
 export default class OrderApi {
 
-    API_URL = "http://176.38.128.64:8989/";
+    API_URL = "http://91.239.81.76:3343/";
 
     options = {
         headers: {
